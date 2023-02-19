@@ -141,11 +141,9 @@ def run(
                         line = (cls, *xywh, conf) if save_conf else (cls, *xywh)  # label format
                         with open(f'{txt_path}.txt', 'a') as f:
                             f.write(('%g ' * len(line)).rstrip() % line + '\n')
-                
-                    results.append({names[int(cls)] : float(f'{conf:.2f}')})
-                    #line = (f'{names[int(cls)]} {conf:.2f}') 
 
-
+                    result = {names[int(cls)] : float(f'{conf:.2f}')}
+                    results.append(result)
 
                     if save_img or save_crop or view_img:  # Add bbox to image
                         c = int(cls)  # integer class
@@ -202,7 +200,7 @@ def main():
     check_requirements(exclude=('tensorboard', 'thop'))
 
     results = run()
-    print(results)
+    #print(results)
 
 if __name__ == '__main__':
     main()
