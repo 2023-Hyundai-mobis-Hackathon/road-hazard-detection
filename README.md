@@ -12,4 +12,4 @@ Utilising YOLOv5 for road hazard detection
 
 ## Inference with detect.py
 
-`python detect.py --weights ../models/best.pt --source ../sample/vid.mp4`
+`python detect.py --weights ../models/yolov1.pt --source ../sample/vid.mp4`
